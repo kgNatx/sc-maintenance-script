@@ -29,7 +29,7 @@ goto sub_%ERRORLEVEL%
 GOTO END
 :sub_1
 @ECHO ==========================================================================================
-@ECHO Clearing Star Citizen shaders directory.
+@ECHO Clearing Star Citizen Shaders Directory
 @ECHO ==========================================================================================
 rd "%localappdata%\Star Citizen\" /S /Q
 @ECHO They're gone.
@@ -37,8 +37,7 @@ TIMEOUT /t 10
 GOTO BEGIN
 :sub_2
 @ECHO ==========================================================================================
-@ECHO Backing Up Star Citizen Keybinds and Custom Characters...
-@ECHO This script is using 7z to zip files, installation is required - http://www.7-zip.org/
+@ECHO Backing Up Star Citizen Keybinds and Custom Characters
 @ECHO ==========================================================================================
 for /f "tokens=3,2,4 delims=/- " %%x in ("%date%") do set d=%%y%%x%%z
 set data=%d%
@@ -47,7 +46,7 @@ set data=%d%
 @ECHO === zipping characters ===================================================================
 "C:\Program Files\7-Zip\7z.exe" a -tzip %backuppath%\%d%-characters-backup.zip %scpath%\LIVE\user\client\0\CustomCharacters
 @ECHO ==========================================================================================
-@ECHO Complete.
+@ECHO That's done.
 TIMEOUT /t 10
 GOTO BEGIN
 :sub_3
