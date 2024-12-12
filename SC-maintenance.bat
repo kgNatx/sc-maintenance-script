@@ -29,10 +29,10 @@ goto sub_%ERRORLEVEL%
 GOTO END
 :sub_1
 @ECHO ==========================================================================================
-@ECHO Clearing Star Citizen Shaders Directory
+@ECHO Clearing Star Citizen Shaders Directory - this deletes nothing the game won't recreate
 @ECHO ==========================================================================================
 rd "%localappdata%\Star Citizen\" /S /Q
-@ECHO They're gone.
+@ECHO If they were there, they're gone now.
 TIMEOUT /t 10
 GOTO BEGIN
 :sub_2
