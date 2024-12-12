@@ -20,7 +20,7 @@ cls
 @ECHO =                 3. Copy Keybinds from LIVE to PTU and EPTU                             =
 @ECHO =                 4. Quit                                                                =
 @ECHO ==========================================================================================
-@ECHO =  Remember to save your keybinds to a profile ingame. :)                                =
+@ECHO =  Remember to save your keybinds to a profile ingame, and reload them after copying.    =
 @ECHO =  This script uses 7z to backup files, installation is required - http://www.7-zip.org/ =
 @ECHO =  Also, you must configure the path variables in the script to your specific locations. =
 @ECHO ==========================================================================================
