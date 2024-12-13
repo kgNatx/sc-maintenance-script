@@ -15,12 +15,12 @@ cls
 @ECHO ==========================================================================================
 @ECHO =                              Star Citizen Client Maintenance                           =
 @ECHO ==========================================================================================
-@ECHO =                 1. Clear Star Citizen Shaders Directory                                =
-@ECHO =                 2. Backup Star Citizen Keybinds and Custom Characters                  =
-@ECHO =                 3. Copy Keybinds from LIVE to PTU and EPTU                             =
+@ECHO =                 1. Clear Shaders Directory                                             =
+@ECHO =                 2. Backup Keybind Saved Profiles and Custom Characters                 =
+@ECHO =                 3. Copy Keybind Saved Profiles from LIVE to PTU and EPTU               =
 @ECHO =                 4. Quit                                                                =
 @ECHO ==========================================================================================
-@ECHO =  Remember to save your keybinds to a profile ingame, and reload them after copying.    =
+@ECHO =  Remember, save your keybinds to a profile ingame first, reload them after copying.    =
 @ECHO =  This script uses 7z to backup files, installation is required - http://www.7-zip.org/ =
 @ECHO =  Also, you must configure the path variables in the script to your specific locations. =
 @ECHO ==========================================================================================
@@ -29,7 +29,7 @@ goto sub_%ERRORLEVEL%
 GOTO END
 :sub_1
 @ECHO ==========================================================================================
-@ECHO Clearing Star Citizen Shaders Directory - this deletes nothing the game won't recreate
+@ECHO = Clearing Star Citizen Shaders Directory - this deletes nothing the game won't recreate =
 @ECHO ==========================================================================================
 rd "%localappdata%\Star Citizen\" /S /Q
 @ECHO If they were there, they're gone now.
@@ -37,7 +37,8 @@ TIMEOUT /t 10
 GOTO BEGIN
 :sub_2
 @ECHO ==========================================================================================
-@ECHO Backing Up Star Citizen Keybinds and Custom Characters
+@ECHO =  Backing Up Star Citizen Keybind Saved Profiles and Custom Characters                  =
+@ECHO =  Remember, save your keybinds to a profile ingame first, reload them after copying.    =
 @ECHO ==========================================================================================
 for /f "tokens=3,2,4 delims=/- " %%x in ("%date%") do set d=%%y%%x%%z
 set data=%d%
@@ -51,7 +52,8 @@ TIMEOUT /t 10
 GOTO BEGIN
 :sub_3
 @ECHO ==========================================================================================
-@ECHO Copying Keybinds from LIVE to PTU and EPTU if it exists
+@ECHO =  Copying Keybind Saved Profiles from LIVE to PTU and EPTU if it exists                 =
+@ECHO =  Remember, save your keybinds to a profile ingame first, reload them after copying.    =
 @ECHO ==========================================================================================
 xcopy /s %scpath%\LIVE\user\client\0\Controls\ %scpath%\PTU\user\client\0\Controls\ /y
 xcopy /s %scpath%\LIVE\user\client\0\Controls\ %scpath%\EPTU\user\client\0\Controls\ /y
